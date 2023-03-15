@@ -11,6 +11,7 @@ class Homework7
         Alice.SetCusId(220);
         Alice.PrintCusInfo();
         Bob.PrintCusInfo();
+        Alice.CompareAge(Bob);
     }
 }
 public class Customer 
@@ -62,9 +63,16 @@ public class Customer
         Console.WriteLine($"Customer: {this.GetCusId()}, name: {this.GetCusName()}, age:{this.GetCusAge()}");
     }
 
-    public static void CompareAge(int i) 
+    public void CompareAge(Customer objCustomer) 
     {
-        
+        if (this.GetCusAge() > objCustomer.GetCusAge()) 
+        {
+            Console.WriteLine($"{this.GetCusName()} is older.");
+        }
+        else 
+        {
+            Console.WriteLine($"{objCustomer.GetCusName()} is older.");
+        }
     }
     public string cus_name;
     public int cus_age;
