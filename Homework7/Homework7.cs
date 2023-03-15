@@ -5,14 +5,15 @@ class Homework7
     {
         Customer Alice = new Customer(initCusAge:28, initCusName:"Alice", initCusId:110);
         Customer Bob = new Customer(111,"Bob",30);
-        Bob.PrintCusInfo();
         Alice.PrintCusInfo();
+        Bob.PrintCusInfo();
         Bob.SetCusId(221);
         Alice.SetCusId(220);
-
+        Alice.PrintCusInfo();
+        Bob.PrintCusInfo();
     }
 }
-class Customer 
+public class Customer 
 {
     private int cus_id;
     public int Cus_Id 
@@ -23,6 +24,7 @@ class Customer
     public void SetCusId (int i)
     {
         this.Cus_Id = i;
+        // Console.WriteLine($"ID belonging to {this.GetCusName()} has been set to {this.GetCusId()}");
     }  
 
     public int GetCusId()
@@ -71,5 +73,6 @@ class Customer
         this.cus_name = initCusName;
         this.cus_age = initCusAge;
         SetCusId(initCusId);
+       // Console.WriteLine($"{this.GetType()} {initCusName} created!");
     }
 }
