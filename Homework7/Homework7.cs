@@ -5,13 +5,16 @@ class Homework7
     {
         Customer Alice = new Customer(initCusAge:28, initCusName:"Alice", initCusId:110);
         Customer Bob = new Customer(111,"Bob",30);
+        // print initial customer info
         Alice.PrintCusInfo();
         Bob.PrintCusInfo();
+        // Change customer IDs to desired
         Bob.SetCusId(221);
         Alice.SetCusId(220);
+        // Print our new info
         Alice.PrintCusInfo();
         Bob.PrintCusInfo();
-        Alice.CompareAge(Bob);
+        Customer.CompareAge(Alice,Bob); // comparison between any 2 objects
     }
 }
 public class Customer 
@@ -63,15 +66,15 @@ public class Customer
         Console.WriteLine($"Customer: {this.GetCusId()}, name: {this.GetCusName()}, age:{this.GetCusAge()}");
     }
 
-    public void CompareAge(Customer objCustomer) 
+    public static void CompareAge(Customer objCustomer, Customer objCustomer2)  // comparison capable of comparing multiple things, as CompareAge belongs to Customer class
     {
-        if (this.GetCusAge() > objCustomer.GetCusAge()) 
+        if (objCustomer.GetCusAge() > objCustomer2.GetCusAge()) 
         {
-            Console.WriteLine($"{this.GetCusName()} is older.");
+            Console.WriteLine($"{objCustomer.GetCusName()} is older.");
         }
         else 
         {
-            Console.WriteLine($"{objCustomer.GetCusName()} is older.");
+            Console.WriteLine($"{objCustomer2.GetCusName()} is older.");
         }
     }
     public string cus_name;
