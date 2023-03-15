@@ -24,7 +24,7 @@ public class Customer
     }
     public void SetCusId (int i)
     {
-        this.Cus_Id = i;
+        this.Cus_Id = i; // use the accessor to set the Cus_Id to overloaded variable
         // Console.WriteLine($"ID belonging to {this.GetCusName()} has been set to {this.GetCusId()}");
     }  
 
@@ -80,7 +80,7 @@ public class Customer
     {
         this.cus_name = initCusName;
         this.cus_age = initCusAge;
-        SetCusId(initCusId);
+        SetCusId(initCusId); // Using SetCusId function to access our private values
        // Console.WriteLine($"{this.GetType()} {initCusName} created!");
     }
 }
